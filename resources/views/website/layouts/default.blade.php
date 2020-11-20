@@ -12,7 +12,7 @@
 		@include('website.includes.header-top')
 		    <div class="main_menu">
 			    @include('website.includes.search')
-			        @include('website.includes.nav')
+				@include('website.includes.nav')
 		    </div>
 	</header>
 	<!--================ End Header Menu Area =================-->
