@@ -13,3 +13,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="{{ asset('ui/website/js/gmaps.min.js') }}"></script>
 <script src="{{ asset('ui/website/js/theme.js') }}"></script>
+<script src="{{asset('ui/website/reg/vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('ui/website/reg/vendor/select2/select2.min.js')}}"></script>
+<script src="{{asset('ui/website/reg/vendor/datepicker/moment.min.js')}}"></script>
+<script src="{{asset('ui/website/reg/vendor/datepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('ui/website/reg/js/global.js')}}"></script>
