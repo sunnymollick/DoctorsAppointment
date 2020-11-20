@@ -24,4 +24,11 @@ class HomeController extends Controller{
     public function blog(){
         return view('website.pages.blog');
     }
+    public function reg(){
+        return view('website.pages.reg');
+    }
+    public function login(){
+        return view('website.pages.login');
+    }
+    
 }

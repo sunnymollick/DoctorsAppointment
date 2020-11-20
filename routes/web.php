@@ -23,3 +23,5 @@ Route::get('notifications','AdminController@notifications')->name('notifications
 Route::get('tables','AdminController@tables')->name('tables');
 Route::get('typography','AdminController@typography')->name('typography');
 Route::get('user','AdminController@user')->name('user');
+Route::get('registration','HomeController@reg');
+Route::get('login','HomeController@login');
