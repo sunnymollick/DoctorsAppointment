@@ -13,7 +13,7 @@
             <ul class="nav navbar-nav menu_nav ml-auto">
             <li class="nav-item active"><a class="nav-link" href="{{ route('/') }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('about-us') }}">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('department') }}">Department</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('web-department') }}">Department</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('registration') }}">Registration</a></li>
