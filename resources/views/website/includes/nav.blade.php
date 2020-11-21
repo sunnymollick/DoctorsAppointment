@@ -16,6 +16,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('department') }}">Department</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('registration') }}">Registration</a></li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item"><a href="#" class="search">

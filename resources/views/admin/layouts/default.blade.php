@@ -44,6 +44,8 @@ The above copyright notice and this permission notice shall be included in all c
   </div>
   <!--   Core JS Files   -->
   @include('admin.includes.script')
+  @yield('scripts')
+
 </body>
 
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller{
@@ -24,11 +25,12 @@ class HomeController extends Controller{
     public function blog(){
         return view('website.pages.blog');
     }
-    public function reg(){
-        return view('website.pages.reg');
+    public function registration(){
+        $departments = Department::all();
+        return view('website.pages.reg',['departments'=>$departments]);
     }
     public function login(){
         return view('website.pages.login');
     }
-    
+
 }

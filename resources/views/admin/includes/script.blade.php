@@ -1,4 +1,5 @@
-<script src="{{asset('ui/admin/js/core/jquery.min.js')}}"></script>
+
+  <script src="{{asset('ui/admin/js/core/jquery.min.js')}}"></script>
   <script src="{{asset('ui/admin/js/core/popper.min.js')}}"></script>
   <script src="{{asset('ui/admin/js/core/bootstrap-material-design.min.js')}}"></script>
   <script src="{{asset('ui/admin/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
@@ -40,6 +41,32 @@
   <script src="{{asset('ui/admin/js/material-dashboard.js?v=2.1.2')}}" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="{{asset('ui/admin/demo/demo.js')}}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    {{-- Start Scripts for toster  --}}
+  <script>
+    @if(Session::has('messege'))
+      var type="{{Session::get('alert-type','info')}}"
+      switch(type){
+          case 'info':
+               toastr.info("{{ Session::get('messege') }}");
+               break;
+          case 'success':
+              toastr.success("{{ Session::get('messege') }}");
+              break;
+          case 'warning':
+             toastr.warning("{{ Session::get('messege') }}");
+              break;
+          case 'error':
+              toastr.error("{{ Session::get('messege') }}");
+              break;
+      }
+    @endif
+ </script>
+    {{-- End Scripts for toster  --}}
+
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -218,3 +245,4 @@
 
     });
   </script>
+
