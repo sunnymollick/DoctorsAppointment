@@ -1,49 +1,67 @@
-<!--
-    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-    Tip 2: you can also add an image using data-image tag
-    -->
-<div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-    Creative Tim
-    </a></div>
-<div class="sidebar-wrapper">
-    <ul class="nav">
-    <li class="nav-item active  ">
-        <a class="nav-link" href="{{route('dashboard')}}">
-        <i class="material-icons">dashboard</i>
-        <p>Dashboard</p>
-        </a>
-    </li>
-    <li class="nav-item ">
-        <a class="nav-link" href="{{route('user')}}">
-        <i class="material-icons">person</i>
-        <p>User Profile</p>
-        </a>
-    </li>
-    <li class="nav-item ">
-        <a class="nav-link" href="{{route('tables')}}">
-        <i class="material-icons">content_paste</i>
-        <p>Table List</p>
-        </a>
-    </li>
-    <li class="nav-item ">
-        <a class="nav-link" href="{{route('typography')}}">
-        <i class="material-icons">library_books</i>
-        <p>Typography</p>
-        </a>
-    </li>
-    <li class="nav-item ">
-        <a class="nav-link" href="{{route('notifications')}}">
-        <i class="material-icons">notifications</i>
-        <p>Notifications</p>
-        </a>
-    </li>
-    <li class="nav-item ">
-        <a class="nav-link" href="{{route('department')}}">
-            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-        <p>Department</p>
-        </a>
-    </li>
-
-    </ul>
-</div>
+<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+    <div class="sb-sidenav-menu">
+        <div class="nav">
+            <div class="sb-sidenav-menu-heading">Core</div>
+            <a class="nav-link" href="index.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                Dashboard
+            </a>
+            <div class="sb-sidenav-menu-heading">Interface</div>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                Department
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="{{ route('department') }}">Add Department</a>
+                    <a class="nav-link" href="layout-sidenav-light.html">All Department</a>
+                </nav>
+            </div>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                Pages
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                        Authentication
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                        <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link" href="{{ route('registration') }}">Register</a>
+                        <a class="nav-link" href="{{ route('forget-password') }}">Forgot Password</a>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                        Error
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="401.html">401 Page</a>
+                            <a class="nav-link" href="404.html">404 Page</a>
+                            <a class="nav-link" href="500.html">500 Page</a>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+            <div class="sb-sidenav-menu-heading">Addons</div>
+            <a class="nav-link" href="charts.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                Charts
+            </a>
+        <a class="nav-link" href="{{ route('tables') }}">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Tables
+            </a>
+        </div>
+    </div>
+    <div class="sb-sidenav-footer">
+        <div class="small">Logged in as:</div>
+        Start Bootstrap
+    </div>
+</nav>
