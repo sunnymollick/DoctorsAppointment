@@ -5,20 +5,21 @@
             <div class="card card-2">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">LOGIN</h2>
-                    <form action="mail.html" method="post">
-                            <div class="col-lg-12 form_group">
-                            <label for="email">Email address</label>
-                                <input name="email" 
-                                    class="input--style-2" required="" type="email">
-                            </div> 
-                            <div class="col-lg-12 form_group">
-                            <label for="password">Password</label>
-                                <input name="password" 
-                                    class="input--style-2" required="" type="passwor">
+                    <h2 class="title text-center">LOGIN</h2>
+                    <form action="" method="post">
+                        @csrf
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                                </div>
                             </div>
-                            <div class="p-t-30">
-                            <button class="btn btn--radius btn--green" type="submit">login</button>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input type="passord" class="form-control" name="password" placeholder="Enter Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Login" class="btn btn-block btn-success">
                             </div>
                         </div>
                    </form>
@@ -27,4 +28,3 @@
         </div>
     </div>
 @endsection
-	

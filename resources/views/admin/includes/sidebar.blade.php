@@ -38,6 +38,12 @@
         <p>Notifications</p>
         </a>
     </li>
-    
+    <li class="nav-item ">
+        <a class="nav-link" href="{{route('department')}}">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+        <p>Department</p>
+        </a>
+    </li>
+
     </ul>
 </div>
