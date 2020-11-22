@@ -10,7 +10,7 @@ class AuthController extends Controller
         return view('admin.pages.auth.login');
     }
     public function registration(){
-        return view('admin.pages.auth.registration');
+        return view('website.pages.reg');
     }
     public function forgetPassword(){
         return view('admin.pages.auth.forget_password');
