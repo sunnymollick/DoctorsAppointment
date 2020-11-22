@@ -44,6 +44,9 @@ Route::get('add-schedule','AdminController@add_schedule')->name('add-schedule');
 Route::get('all/department','DepartmentController@manageDepartments')->name('all-departments');
 Route::get('add/department','DepartmentController@addDepartment')->name('add-department');
 Route::post('create/department','DepartmentController@createDepartment')->name('create-department');
+Route::get('edit/department/{id}', 'DepartmentController@editDepartment')->name('edit-department');
+Route::post('update-department/{id}', 'DepartmentController@updateDepartment')->name('update-department');
+Route::get('delete-department/{id}', 'DepartmentController@deleteDepartment')->name('delete-department');
 
 
 

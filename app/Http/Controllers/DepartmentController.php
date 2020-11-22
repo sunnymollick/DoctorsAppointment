@@ -25,7 +25,7 @@ class DepartmentController extends Controller{
                 'messege'=>'Successfully Department Inserted',
                 'alert-type'=>'success'
                  );
-               return Redirect()->to('add-department')->with($notification);
+               return Redirect()->to('add/department')->with($notification);
     	}else{
         	  $notification=array(
                 'messege'=>'Something went wrong!',
@@ -34,6 +34,44 @@ class DepartmentController extends Controller{
                return Redirect()->back()->with($notification);
         }
     }
-
+    public function editDepartment($id){
+        $department = Department::find($id);
+        return view('admin.pages.department.edit_department', ['department'=>$department]);
+    }
+    public function updateDepartment(Request $req, $id){
+        $department = Department::find($id);
+        $department->name = $req->name;
+        $department->description  = $req->description;
+        $department->status = $req->status;
+        if ($department->save()) {
+            $notification=array(
+                'messege'=>'Successfully Department Updated',
+                'alert-type'=>'success'
+                 );
+               return Redirect('all/department')->with($notification);
+        }else{
+              $notification=array(
+                'messege'=>'Something went wrong!',
+                'alert-type'=>'error'
+                 );
+               return Redirect()->back()->with($notification);
+        }
+    }
+    public function deleteDepartment($id){
+        $obj =  Department::find($id);
+        if ($obj->delete()) {
+            $notification=array(
+                'messege'=>'Successfully Department Deleted',
+                'alert-type'=>'success'
+                 );
+               return Redirect('all/department')->with($notification);
+        }else{
+              $notification=array(
+                'messege'=>'Something went wrong!',
+                'alert-type'=>'error'
+                 );
+               return Redirect()->back()->with($notification);
+        }
+    }
 
 }
