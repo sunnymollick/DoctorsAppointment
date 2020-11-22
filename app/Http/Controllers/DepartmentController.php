@@ -25,7 +25,7 @@ class DepartmentController extends Controller{
                 'messege'=>'Successfully Department Inserted',
                 'alert-type'=>'success'
                  );
-               return Redirect()->to('all/department')->with($notification);
+               return Redirect('all/department')->with($notification);
     	}else{
         	  $notification=array(
                 'messege'=>'Something went wrong!',
