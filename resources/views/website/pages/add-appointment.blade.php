@@ -1,6 +1,28 @@
-@extends('admin.layouts.default')
-@section('content')
-     <div class="row">
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- add-appointment24:07-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('ui/admin')}}/assets/img/favicon.ico">
+    <title>Add Appointment</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('ui/admin')}}/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('ui/admin')}}/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('ui/admin')}}/assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('ui/admin')}}/assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('ui/admin')}}/assets/css/style.css">
+    <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv.min.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="row">
                     <div class="col-lg-8 offset-lg-2">
                         <h4 class="page-title">Add Appointment</h4>
                     </div>
@@ -11,19 +33,19 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-										<label>Appointment ID</label>
-										<input class="form-control" type="text" value="APT-0001" readonly="">
-									</div>
+                                        <label>Appointment ID</label>
+                                        <input class="form-control" type="text" value="APT-0001" readonly="">
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-									<div class="form-group">
-										<label>Patient Name</label>
-										<select class="select">
-											<option>Select</option>
-											<option>Jennifer Robinson</option>
-											<option>Terry Baker</option>
-										</select>
-									</div>
+                                    <div class="form-group">
+                                        <label>Patient Name</label>
+                                        <select class="select">
+                                            <option>Select</option>
+                                            <option>Jennifer Robinson</option>
+                                            <option>Terry Baker</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -45,10 +67,10 @@
                                     <div class="form-group">
                                         <label>Doctor</label>
                                         <select class="select">
-											<option>Select</option>
-											<option>Cristina Groves</option>
-											<option>Marie Wells</option>
-											<option>Henry Daniels</option>
+                                            <option>Select</option>
+                                            <option>Cristina Groves</option>
+                                            <option>Marie Wells</option>
+                                            <option>Henry Daniels</option>
                                         </select>
                                     </div>
                                 </div>
@@ -91,18 +113,18 @@
                             </div>
                             <div class="form-group">
                                 <label class="display-block">Appointment Status</label>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="product_active" value="option1" checked>
-									<label class="form-check-label" for="product_active">
-									Active
-									</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="product_inactive" value="option2">
-									<label class="form-check-label" for="product_inactive">
-									Inactive
-									</label>
-								</div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="status" id="product_active" value="option1" checked>
+                                    <label class="form-check-label" for="product_active">
+                                    Active
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="status" id="product_inactive" value="option2">
+                                    <label class="form-check-label" for="product_inactive">
+                                    Inactive
+                                    </label>
+                                </div>
                             </div>
                             <div class="m-t-20 text-center">
                                 <button class="btn btn-primary submit-btn">Create Appointment</button>
@@ -110,13 +132,19 @@
                         </form>
                     </div>
                 </div>
-@endsection
-
-@section('scripts')
-    <script src="{{asset('ui/admin/assets/js/select2.min.js')}}"></script>
-	<script src="{{asset('ui/admin/assets/js/moment.min.js')}}"></script>
-	<script src="{{asset('ui/admin/assets/js/bootstrap-datetimepicker.min.js')}}"></script>
-	<script>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="{{asset('ui/admin')}}/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="{{asset('ui/admin')}}/assets/js/popper.min.js"></script>
+    <script src="{{asset('ui/admin')}}/assets/js/bootstrap.min.js"></script>
+    <script src="{{asset('ui/admin')}}/assets/js/jquery.slimscroll.js"></script>
+    <script src="{{asset('ui/admin')}}/assets/js/select2.min.js"></script>
+    <script src="{{asset('ui/admin')}}/assets/js/moment.min.js"></script>
+    <script src="{{asset('ui/admin')}}/assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="{{asset('ui/admin/assets/js/app.js')}}"></script>
+    <script>
             $(function () {
                 $('#datetimepicker3').datetimepicker({
                     format: 'LT'
@@ -124,7 +152,8 @@
                 });
             });
      </script>
-@endsection
+</body>
 
-               
-    
+
+<!-- add-appointment24:07-->
+</html>

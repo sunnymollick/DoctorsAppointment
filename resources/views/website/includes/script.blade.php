@@ -18,3 +18,4 @@
 <script src="{{asset('ui/website/reg/vendor/datepicker/moment.min.js')}}"></script>
 <script src="{{asset('ui/website/reg/vendor/datepicker/daterangepicker.js')}}"></script>
 <script src="{{asset('ui/website/reg/js/global.js')}}"></script>
+
