@@ -27,9 +27,30 @@ Route::get('login','HomeController@login')->name('login');
 
 Route::get('dashboard','AdminController@dashboard')->name('dashboard');
 
-Route::get('tables','AdminController@tables')->name('tables');
+Route::get('doctors','AdminController@doctors')->name('doctors');
+Route::get('add-doctor','AdminController@add_doctor')->name('add-doctor');
 
-Route::get('user','AdminController@user')->name('user');
+Route::get('patients','AdminController@patients')->name('patients');
+Route::get('add-patient','AdminController@add_patient')->name('add-patient');
+
+Route::get('appointments','AdminController@appointments')->name('appointments');
+Route::get('add-appointment','AdminController@add_appointment')->name('add-appointment');
+
+Route::get('schedule','AdminController@schedule')->name('schedule');
+Route::get('add-schedule','AdminController@add_schedule')->name('add-schedule');
+
+Route::get('departments','AdminController@departments')->name('departments');
+Route::get('add-department','AdminController@add_department')->name('add-department');
+
+Route::get('blog','AdminController@blog')->name('blog');
+Route::get('add-blog','AdminController@add_blog')->name('add-blog');
+Route::get('blog-details','AdminController@blog_details')->name('blog-details');
+Route::get('edit-blog','AdminController@edit_blog')->name('edit-blog');
+
+
+
+
+
 Route::get('login','AuthController@login')->name('login');
 Route::get('registration','AuthController@registration')->name('registration');
 Route::get('forget/password','AuthController@forgetPassword')->name('forget-password');

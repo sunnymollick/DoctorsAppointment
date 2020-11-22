@@ -1,67 +1,49 @@
-<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-    <div class="sb-sidenav-menu">
-        <div class="nav">
-            <div class="sb-sidenav-menu-heading">Core</div>
-            <a class="nav-link" href="index.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                Dashboard
-            </a>
-            <div class="sb-sidenav-menu-heading">Interface</div>
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                Department
-                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-            </a>
-            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="{{ route('department') }}">Add Department</a>
-                    <a class="nav-link" href="layout-sidenav-light.html">All Department</a>
-                </nav>
-            </div>
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                Pages
-                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-            </a>
-            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                        Authentication
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                        <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
-                        <a class="nav-link" href="{{ route('registration') }}">Register</a>
-                        <a class="nav-link" href="{{ route('forget-password') }}">Forgot Password</a>
-                        </nav>
-                    </div>
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                        Error
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="401.html">401 Page</a>
-                            <a class="nav-link" href="404.html">404 Page</a>
-                            <a class="nav-link" href="500.html">500 Page</a>
-                        </nav>
-                    </div>
-                </nav>
-            </div>
-            <div class="sb-sidenav-menu-heading">Addons</div>
-            <a class="nav-link" href="charts.html">
-                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                Charts
-            </a>
-        <a class="nav-link" href="{{ route('tables') }}">
-                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Tables
-            </a>
-        </div>
+<div class="sidebar-inner slimscroll">
+    <div id="sidebar-menu" class="sidebar-menu">
+        <ul>
+            <li class="menu-title">Main</li>
+            <li class="active">
+                <a href="index-2.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+            </li>
+            <li>
+             <a href="{{route('doctors')}}"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+            </li>
+            <li>
+                <a href="{{route('patients')}}"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
+            </li>
+            <li>
+                <a href="{{route('appointments')}}"><i class="fa fa-calendar"></i> <span>Appointments</span></a>
+            </li>
+            <li>
+                <a href="{{route('schedule')}}"><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
+            </li>
+            <li>
+                <a href="{{route('departments')}}"><i class="fa fa-hospital-o"></i> <span>Departments</span></a>
+            </li>
+            <li class="submenu">
+                <a href="#"><i class="fa fa-envelope"></i> <span> Email</span> <span class="menu-arrow"></span></a>
+                <ul style="display: none;">
+                    <li><a href="compose.html">Compose Mail</a></li>
+                    <li><a href="inbox.html">Inbox</a></li>
+                    <li><a href="mail-view.html">Mail View</a></li>
+                </ul>
+            </li>
+            <li class="submenu">
+                <a href="#"><i class="fa fa-commenting-o"></i> <span> Blog</span> <span class="menu-arrow"></span></a>
+                <ul style="display: none;">
+                    <li><a href="{{route('blog')}}">Blog</a></li>
+                    <li><a href="{{route('blog-details')}}">Blog View</a></li>
+                    <li><a href="{{route('add-blog')}}">Add Blog</a></li>
+                    <li><a href="{{route('edit-blog')}}">Edit Blog</a></li>
+                </ul>
+            </li>
+            <li class="menu-title">Extras</li>
+            <li class="submenu">
+                <a href="#"><i class="fa fa-columns"></i> <span>Edit</span> <span class="menu-arrow"></span></a>
+                <ul style="display: none;">
+                    <li><a href="change-password2.html"> Change Password </a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
-    <div class="sb-sidenav-footer">
-        <div class="small">Logged in as:</div>
-        Start Bootstrap
-    </div>
-</nav>
+</div>
