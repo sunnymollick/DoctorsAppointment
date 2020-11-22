@@ -18,7 +18,7 @@
                 <a href="{{route('schedule')}}"><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
             </li>
             <li>
-                <a href="{{route('departments')}}"><i class="fa fa-hospital-o"></i> <span>Departments</span></a>
+                <a href="{{route('all-departments')}}"><i class="fa fa-hospital-o"></i> <span>Departments</span></a>
             </li>
             <li class="submenu">
                 <a href="#"><i class="fa fa-envelope"></i> <span> Email</span> <span class="menu-arrow"></span></a>

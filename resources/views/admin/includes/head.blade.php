@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('ui/admin/assets/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('ui/admin')}}/assets/css/tagsinput.css">
     <link rel="stylesheet" type="text/css" href="{{asset('ui/admin/assets/css/bootstrap-datetimepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+
+
     <!--[if lt IE 9]>
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>

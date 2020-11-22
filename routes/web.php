@@ -39,8 +39,14 @@ Route::get('add-appointment','AdminController@add_appointment')->name('add-appoi
 Route::get('schedule','AdminController@schedule')->name('schedule');
 Route::get('add-schedule','AdminController@add_schedule')->name('add-schedule');
 
-Route::get('departments','AdminController@departments')->name('departments');
-Route::get('add-department','AdminController@add_department')->name('add-department');
+// Department Routes Go
+
+Route::get('all/department','DepartmentController@manageDepartments')->name('all-departments');
+Route::get('add/department','DepartmentController@addDepartment')->name('add-department');
+Route::post('create/department','DepartmentController@createDepartment')->name('create-department');
+
+
+
 
 Route::get('blog','AdminController@blog')->name('blog');
 Route::get('add-blog','AdminController@add_blog')->name('add-blog');
@@ -54,9 +60,3 @@ Route::get('edit-blog','AdminController@edit_blog')->name('edit-blog');
 Route::get('login','AuthController@login')->name('login');
 Route::get('registration','AuthController@registration')->name('registration');
 Route::get('forget/password','AuthController@forgetPassword')->name('forget-password');
-
-// Department Routes Go Here
-
-Route::get('department','DepartmentController@index')->name('department');
-Route::post('create/department','DepartmentController@create')->name('create-department');
-
