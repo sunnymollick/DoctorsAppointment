@@ -43,13 +43,6 @@ class AdminController extends Controller
     }
 
 
-    public function departments(){
-        return view('admin.pages.departments');
-    }
-    public function add_department(){
-        return view('admin.pages.add-department');
-    }
-
 
     public function blog(){
         return view('admin.pages.blog');
