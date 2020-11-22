@@ -34,7 +34,6 @@ Route::get('patients','AdminController@patients')->name('patients');
 Route::get('add-patient','AdminController@add_patient')->name('add-patient');
 
 Route::get('appointments','AdminController@appointments')->name('appointments');
-Route::get('add-appointment','AdminController@add_appointment')->name('add-appointment');
 
 Route::get('schedule','AdminController@schedule')->name('schedule');
 Route::get('add-schedule','AdminController@add_schedule')->name('add-schedule');
@@ -48,7 +47,8 @@ Route::get('edit/department/{id}', 'DepartmentController@editDepartment')->name(
 Route::post('update-department/{id}', 'DepartmentController@updateDepartment')->name('update-department');
 Route::get('delete-department/{id}', 'DepartmentController@deleteDepartment')->name('delete-department');
 
-
+// Appointment Route goes here
+Route::get('add-appointment','AppointmentController@add_appointment')->name('add-appointment');
 
 
 Route::get('blog','AdminController@blog')->name('blog');

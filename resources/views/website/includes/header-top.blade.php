@@ -12,7 +12,7 @@
                 <a href="tel:+9530123654896"><span class="lnr lnr-phone-handset"></span> <span class="text"><span class="text">+953
                             012 3654 896</span></span></a>
                 <a href="mailto:support@colorlib.com"><span class="lnr lnr-envelope"></span> <span class="text"><span class="text">support@colorlib.com</span></span></a>
-                <a href="#" class="primary-btn text-uppercase">Appointment</a>
+                <a href="#appointment" class="primary-btn text-uppercase">Appointment</a>
             </div>
         </div>
     </div>

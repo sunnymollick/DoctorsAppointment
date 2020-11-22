@@ -114,7 +114,7 @@
 				</div>
 
 				<!-- appoinment area -->
-				<div class="col-lg-6">
+				<div id="appointment" class="col-lg-6">
 					<div class="recent_blog appoinment">
 						<div class="blog_title">
 							<h2>Make an Appointment</h2>
@@ -122,7 +122,7 @@
 								dolore magna aliqua.</p>
 						</div>
 					</div>
-					<div class="row justify-content-center">
+					<div  class="row justify-content-center">
 						<div class="appoinment_form_section lite_bg">
 							<form class="form_area" id="myForm" action="mail.html" method="post">
 								<div class="row">
@@ -132,21 +132,15 @@
 										<input name="email" placeholder="Email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
 										 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common_input form-control"
 										 required="" type="email">
-										<input name="name" placeholder="Date of birth" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
-										 class="common_input form-control" required="" type="text">
-										<select class="default-select">
-											<option data-display="Doctor’s name">Doctor’s name</option>
-											<option value="1">Rashimul</option>
-											<option value="2">Shofi</option>
-										</select>
-										<input name="subject" placeholder="Appointment date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
+										<input name="age" placeholder="Enter Patient's Age" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
+										 class="common_input form-control" required="" type="number">
+										<input name="address" placeholder="Enter Patient's Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
 										 class="common_input mb-10 form-control" required="" type="text">
-
-										<textarea class="common_textarea form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''"
-										 onblur="this.placeholder = 'Messege'" required=""></textarea>
+										 <input name="phone" placeholder="Enter Contact Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
+										 class="common_input mb-10 form-control" required="" type="text">
 									</div>
 									<div class="col-lg-12 text-center">
-										<button class="primary-btn text-uppercase">confirm booking</button>
+										<a href="{{ route('add-appointment') }}" class="primary-btn text-uppercase">Booking</a>
 									</div>
 								</div>
 							</form>
