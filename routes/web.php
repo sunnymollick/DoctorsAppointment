@@ -20,7 +20,8 @@ Route::get('about/us','HomeController@aboutUs')->name('about-us');
 Route::get('web/department','HomeController@department')->name('web-department');
 Route::get('contact','HomeController@contact')->name('contact');
 Route::get('blog','HomeController@blog')->name('blog');
-Route::get('registration','HomeController@registration')->name('registration');
+Route::get('registration','RegController@registration')->name('registration');
+Route::post('store-doctor','RegController@store')->name('store-doctor');
 Route::get('login','HomeController@login')->name('login');
 
 // Admin Routes go here >>
@@ -60,6 +61,4 @@ Route::get('edit-blog','AdminController@edit_blog')->name('edit-blog');
 
 
 
-Route::get('login','AuthController@login')->name('login');
-Route::get('registration','AuthController@registration')->name('registration');
-Route::get('forget/password','AuthController@forgetPassword')->name('forget-password');
+
