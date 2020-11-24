@@ -19,3 +19,4 @@
 <link href="{{asset('ui/website/reg/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
 <link href="{{asset('ui/website/reg/vendor/datepicker/daterangepicker.css')}}" rel="stylesheet" media="all">
 <link href="{{asset('ui/website/reg/css/main.css')}}" rel="stylesheet" media="all">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">

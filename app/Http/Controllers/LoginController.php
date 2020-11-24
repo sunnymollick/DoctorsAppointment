@@ -23,22 +23,27 @@ class LoginController extends Controller
 
         
         if($user && Hash::check($password, $user->password)){
-            Session::put('doctorid',$user->id);
-            Session::put('doctorname',$user->name);
-            Session::put('doctordob',$user->dob);
-            Session::put('doctorgender',$user->gender);
-            Session::put('doctoremail',$user->email);
+            Session::put('doctorId',$user->id);
+            Session::put('doctorName',$user->name);
+            Session::put('doctorDob',$user->dob);
+            Session::put('doctorGender',$user->gender);
+            Session::put('doctorEmail',$user->email);
+            Session::put('doctorAvatar',$user->image);
             return redirect()->to('dashboard');
         }
         elseif($admin && ($password = $admin->password)){
-            Session::put('adminid',$admin->id);
-            Session::put('adminname','Admin');
-            Session::put('adminemail',$admin->email);          
+            Session::put('adminId',$admin->id);
+            Session::put('adminName','Admin');
+            Session::put('adminEmail',$admin->email);          
             return redirect()->to('dashboard');   
         }
-        else {             
-            return redirect()->to('/login');       
-        }
+        else{
+            $notification=array(
+              'messege'=>'Password or Email is Incorrect!',
+              'alert-type'=>'error'
+               );
+             return Redirect()->back()->with($notification);
+      }
 
     }
     public function logout(){
