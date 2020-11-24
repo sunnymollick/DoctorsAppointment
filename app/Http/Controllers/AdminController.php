@@ -30,7 +30,7 @@ class AdminController extends Controller
     public function appointments(){
         return view('admin.pages.appointments');
     }
-    
+
 
 
     public function schedule(){
@@ -42,9 +42,7 @@ class AdminController extends Controller
 
 
 
-    public function blog(){
-        return view('admin.pages.blog');
-    }
+
     public function add_blog(){
         return view('admin.pages.add-blog');
     }
