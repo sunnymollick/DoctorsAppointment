@@ -51,6 +51,8 @@ Route::get('delete-department/{id}', 'DepartmentController@deleteDepartment')->n
 // Appointment Route goes here
 Route::get('add-appointment','AppointmentController@add_appointment')->name('add-appointment');
 
+// patient route goes here
+Route::post('insert-patient','PatientController@insertPatient')->name('insert-patient');
 
 // Doctors Routes goes here
 Route::get('doctor/profile', 'DoctorController@doctorProfile')->name('doctor-profile');
