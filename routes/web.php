@@ -52,13 +52,14 @@ Route::get('delete-department/{id}', 'DepartmentController@deleteDepartment')->n
 Route::get('add-appointment','AppointmentController@add_appointment')->name('add-appointment');
 
 
+// Doctors Routes goes here
+Route::get('doctor/profile', 'DoctorController@doctorProfile')->name('doctor-profile');
+
+
+
 Route::get('blog','AdminController@blog')->name('blog');
 Route::get('add-blog','AdminController@add_blog')->name('add-blog');
 Route::get('blog-details','AdminController@blog_details')->name('blog-details');
 Route::get('edit-blog','AdminController@edit_blog')->name('edit-blog');
-
-
-
-
 
 
