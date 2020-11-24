@@ -57,7 +57,8 @@ Route::get('doctor/profile', 'DoctorController@doctorProfile')->name('doctor-pro
 
 
 
-Route::get('blog','AdminController@blog')->name('blog');
+Route::get('blog','BlogController@webBlog')->name('blog');
+Route::get('admin/blog','BlogController@adminBlog')->name('admin-blog');
 Route::get('add-blog','AdminController@add_blog')->name('add-blog');
 Route::get('blog-details','AdminController@blog_details')->name('blog-details');
 Route::get('edit-blog','AdminController@edit_blog')->name('edit-blog');
