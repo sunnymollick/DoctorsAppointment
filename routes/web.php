@@ -23,6 +23,8 @@ Route::get('blog','HomeController@blog')->name('blog');
 Route::get('registration','RegController@registration')->name('registration');
 Route::post('store-doctor','RegController@store')->name('store-doctor');
 Route::get('login','HomeController@login')->name('login');
+Route::post('login','LoginController@loginstore')->name('login-store');
+Route::get('out','LoginController@logout')->name('logout');
 
 // Admin Routes go here >>
 

@@ -105,7 +105,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Phone </label>
-                                    <input class="form-control" name="phone" type="text">
+                                    <input class="form-control" name="phone" type="number">
                                     <span>{{ $errors->first('phone') }}</span>
                                 </div>
                             </div>
