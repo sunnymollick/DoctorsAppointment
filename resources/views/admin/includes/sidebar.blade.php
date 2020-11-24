@@ -9,6 +9,9 @@
              <a href="{{route('doctors')}}"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
             </li>
             <li>
+             <a href="{{route('doctor-profile')}}"><i class="fa fa-user-md"></i> <span>My Profile</span></a>
+            </li>
+            <li>
                 <a href="{{route('patients')}}"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
             </li>
             <li>
