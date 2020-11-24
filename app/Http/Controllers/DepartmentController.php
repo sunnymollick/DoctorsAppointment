@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use Illuminate\Http\Request;
+use Image;
 
 class DepartmentController extends Controller{
 
@@ -20,19 +21,47 @@ class DepartmentController extends Controller{
         $obj->name = $request->name;
         $obj->description = $request->description;
         $obj->status = $request->status;
+
+        if ($request->file('picture'))
+
+         {
+               $originalImage      = $request->file('picture');
+               $imageName          = $this->uploadImage($originalImage);
+               $obj->image=$imageName;
+            //    $applicant->picture = $imageName;
+         }
+
         if ($obj->save()) {
     		$notification=array(
                 'messege'=>'Successfully Department Inserted',
                 'alert-type'=>'success'
                  );
                return Redirect('all/department')->with($notification);
-    	}else{
+    	   }
+        else{
         	  $notification=array(
                 'messege'=>'Something went wrong!',
                 'alert-type'=>'error'
                  );
                return Redirect()->back()->with($notification);
         }
+    }
+    private function uploadImage($originalImage)
+   {
+           $profileImage    = Image::make($originalImage);
+
+           $tmp             = $originalImage->getClientOriginalName();
+           $ext2            = explode(".", $tmp);
+           $ext             = end($ext2);
+           $imageName       = time().'.'.$ext;
+           // local
+           $path            ='uploads/';
+           $imageFullName = $path.$imageName;
+           // deployment
+           // $path          = base_path().'/../'.'uploads/';
+
+           $profileImage->save($imageFullName);
+           return $imageFullName;
     }
     public function editDepartment($id){
         $department = Department::find($id);
