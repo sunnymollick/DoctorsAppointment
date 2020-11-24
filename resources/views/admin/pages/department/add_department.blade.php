@@ -8,8 +8,17 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <form action="{{ route('create-department') }}" method="POST">
+                        <form action="{{ route('create-department') }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            <div class="col-md-4 offset-sm-4">
+                                <div style="margin-left: 40pt;">Upload an Avatar</div>
+                                <div id="image_preview"></div>
+                                <br>
+                                <div class="form-group" style="">
+                                    <input type="file" name="picture" id="picture" onchange="preview_image();">
+                                </div>
+                            </div>
+                            
 							<div class="form-group">
 								<label>Department Name</label>
 								<input class="form-control" type="text" name="name">
@@ -44,4 +53,23 @@
 
 @section('scripts')
      <script src="assets/js/select2.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function() 
+            { 
+             $('form').ajaxForm(function() 
+             {
+              alert("Uploaded SuccessFully");
+             }); 
+            });
+
+            function preview_image() 
+            {
+             var total_file=document.getElementById("picture").files.length;
+             for(var i=0;i<total_file;i++)
+             {
+              $('#image_preview').append("<img style='margin-left: 40pt;height: 150px; width: 150px;' src='"+URL.createObjectURL(event.target.files[i])+"'><br>");
+             }
+            }
+        </script>
 @endsection

@@ -15,7 +15,8 @@ class HomeController extends Controller{
     }
 
     public function department(){
-        return view('website.pages.department');
+        $departments = Department::all();
+        return view('website.pages.department', ['departments'=>$departments]);
     }
 
     public function contact(){

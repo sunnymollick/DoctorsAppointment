@@ -33,116 +33,16 @@
 
                 <div class="row">
                     <!-- single department -->
+                    @foreach($departments as $department)
                     <div class="col-lg-2 text-center col-sm-6">
                         <div class="single_department">
                             <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon1.png" alt="">
+                                <img src="{{ asset($department->image) }}" alt="">
                             </div>
-                            <h4>Cardiology</h4>
+                            <h4>{{$department->name}}</h4>
                         </div>
                     </div>
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon2.png" alt="">
-                            </div>
-                            <h4>Urology</h4>
-                        </div>
-                    </div>
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon3.png" alt="">
-                            </div>
-                            <h4>Dental Care</h4>
-                        </div>
-                    </div>
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon4.png" alt="">
-                            </div>
-                            <h4>Eye Care</h4>
-                        </div>
-                    </div>
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon5.png" alt="">
-                            </div>
-                            <h4>Neurology</h4>
-                        </div>
-                    </div>
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon6.png" alt="">
-                            </div>
-                            <h4>Plastic Surgery</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt-30">
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon1.png" alt="">
-                            </div>
-                            <h4>Cardiology</h4>
-                        </div>
-                    </div>
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon2.png" alt="">
-                            </div>
-                            <h4>Urology</h4>
-                        </div>
-                    </div>
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon3.png" alt="">
-                            </div>
-                            <h4>Dental Care</h4>
-                        </div>
-                    </div>
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon4.png" alt="">
-                            </div>
-                            <h4>Eye Care</h4>
-                        </div>
-                    </div>
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon5.png" alt="">
-                            </div>
-                            <h4>Neurology</h4>
-                        </div>
-                    </div>
-                    <!-- single department -->
-                    <div class="col-lg-2 text-center col-sm-6">
-                        <div class="single_department">
-                            <div class="dpmt-thumb">
-                                <img src="{{ asset('ui/website') }}/img/department/d-icon6.png" alt="">
-                            </div>
-                            <h4>Plastic Surgery</h4>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
