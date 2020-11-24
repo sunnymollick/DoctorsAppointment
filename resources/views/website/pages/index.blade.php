@@ -121,26 +121,43 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 								dolore magna aliqua.</p>
 						</div>
-					</div>
+						</div>
+						@if ($errors->any())
+									<div class="alert alert-danger">
+										<ul>
+											@foreach ($errors->all() as $error)
+												<li>{{ $error }}</li>
+											@endforeach
+										</ul>
+									</div>
+							@endif
 					<div  class="row justify-content-center">
+						
 						<div class="appoinment_form_section lite_bg">
-							<form class="form_area" id="myForm" action="mail.html" method="post">
+							<form class="form_area" id="" action="{{ route('insert-patient')}}" method="POST">
+							  @csrf
 								<div class="row">
 									<div class="col-lg-12 form_group">
 										<input name="name" placeholder="Patient name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
 										 class="common_input form-control" required="" type="text">
+										 <span>{{ $errors->first('name') }}</span>
 										<input name="email" placeholder="Email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
 										 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common_input form-control"
 										 required="" type="email">
-										<input name="age" placeholder="Enter Patient's Age" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
+										 <span>{{ $errors->first('email') }}</span>
+										<input name="dob" placeholder="Enter Patient's Age" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your age'"
 										 class="common_input form-control" required="" type="number">
-										<input name="address" placeholder="Enter Patient's Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
+										 <span>{{ $errors->first('dob') }}</span>
+										<input name="address" placeholder="Enter Patient's Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter address'"
 										 class="common_input mb-10 form-control" required="" type="text">
-										 <input name="phone" placeholder="Enter Contact Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
-										 class="common_input mb-10 form-control" required="" type="text">
+										 <span>{{ $errors->first('address') }}</span>
+										 <input name="phone" placeholder="Enter Contact Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter phone number'"
+										 class="common_input mb-10 form-control" required="" type="integer">
+										 <span>{{ $errors->first('phone') }}</span>
 									</div>
 									<div class="col-lg-12 text-center">
-										<a href="{{ route('add-appointment') }}" class="primary-btn text-uppercase">Booking</a>
+										<!-- <a href="{{ route('add-appointment') }}" class="primary-btn text-uppercase">Booking</a> -->
+										<button type="submit" class="btn btn-primary btn-block">booking</button>
 									</div>
 								</div>
 							</form>
