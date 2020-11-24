@@ -46,8 +46,8 @@ class RegController extends Controller
                $obj->image=$imageName;
             //    $applicant->picture = $imageName;
          }
-         
-       
+
+
        if ($obj->save()) {
            $notification=array(
                'messege'=>'Successfully Department Inserted',
@@ -63,22 +63,22 @@ class RegController extends Controller
        }
 
    }
-   
-   
+
+
    private function uploadImage($originalImage)
    {
            $profileImage    = Image::make($originalImage);
-   
+
            $tmp             = $originalImage->getClientOriginalName();
            $ext2            = explode(".", $tmp);
            $ext             = end($ext2);
            $imageName       = time().'.'.$ext;
            // local
-           $path            = public_path().'/uploads/'; 
+           $path            ='uploads/';
            $imageFullName = $path.$imageName;
            // deployment
            // $path          = base_path().'/../'.'uploads/';
-           
+
            $profileImage->save($imageFullName);
            return $imageFullName;
     }
