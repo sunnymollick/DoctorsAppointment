@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Doctor;
 use App\Department;
 use Image;
+
 class RegController extends Controller
 {
     public function registration(){
@@ -22,10 +23,10 @@ class RegController extends Controller
            'date_of_birth'=> 'required|date',
            'gender'=> 'required|in:male,female',
            'address'=>'required|max:70',
-           'phone'=> 'required|numeric|size:11',
-           'phone'=> 'required|regex:/(01)[0-9]{9}/',
+           'phone'=> 'required|numeric',
+          //  'phone'=> 'required|regex:/(01)[0-9]{9}/',
            'status'=>'required|boolean',
-          'picture'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'picture'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
        ]);
        $obj=new Doctor();
        $obj->department_id=$req->department;

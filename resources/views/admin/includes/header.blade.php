@@ -87,13 +87,22 @@
             <img class="rounded-circle" src="{{asset('ui/admin/assets/img/user.jpg')}}" width="24" alt="Admin">
                 <span class="status online"></span>
             </span>
-            <span>Admin</span>
+            @if (Session::has('doctorname'))
+                <span>
+                {{Session::get('doctorname')}}
+            </span>  
+            @endif
+            @if (Session::has('adminname'))
+                <span>
+                {{Session::get('adminname')}}
+            </span>  
+            @endif
         </a>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="profile.html">My Profile</a>
             <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
             <a class="dropdown-item" href="settings.html">Settings</a>
-            <a class="dropdown-item" href="login.html">Logout</a>
+            <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
         </div>
     </li>
 </ul>

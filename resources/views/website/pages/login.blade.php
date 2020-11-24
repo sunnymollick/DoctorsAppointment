@@ -6,7 +6,7 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title text-center">LOGIN</h2>
-                    <form action="" method="post">
+                    <form action="{{route('login-store')}}" method="post">
                         @csrf
                             <div class="form-group row">
                                 <div class="col-md-12">

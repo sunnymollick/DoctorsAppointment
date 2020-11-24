@@ -12,18 +12,18 @@ class AdminController extends Controller
 
 
     public function doctors(){
-        return view('admin.pages.doctors');
+        return view('admin.pages.doctor.doctors');
     }
     public function add_doctor(){
-        return view('admin.pages.add-doctor');
+        return view('admin.pages.doctor.add-doctor');
+    }
+    public function edit_doctor(){
+        return view('admin.pages.doctor.edit-doctor');
     }
 
 
     public function patients(){
-        return view('admin.pages.patients');
-    }
-    public function add_patient(){
-        return view('admin.pages.add-patient');
+        return view('admin.pages.patient.patients');
     }
 
 
