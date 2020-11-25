@@ -17,5 +17,6 @@ class DoctorController extends Controller
         $doctor = Doctor::find(Session::get('doctorId'));
         $department = Department::where('id',$doctor->department_id)->first();
     	return view('admin.pages.doctor.doctor_profile',['doctor'=>$doctor,'department'=>$department,'schedules'=>$schedules]);
+        
     }
 }

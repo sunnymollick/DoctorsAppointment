@@ -24,7 +24,7 @@ class AdminController extends Controller
 
 
     public function patients(){
-        return view('admin.pages.patient.patients');
+        return view('admin.pages.patients');
     }
 
 
