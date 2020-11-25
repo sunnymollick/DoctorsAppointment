@@ -48,7 +48,3 @@
                   });
               });
       </script>
-
-      <script>
-          initSample();
-      </script>

@@ -5,12 +5,16 @@
             <li class="active">
                 <a href="index-2.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
             </li>
+            @if(Session::has('adminId'))
             <li>
              <a href="{{route('doctors')}}"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
             </li>
+            @endif
+            @if(Session::has('doctorId'))
             <li>
              <a href="{{route('doctor-profile')}}"><i class="fa fa-user-md"></i> <span>My Profile</span></a>
             </li>
+            @endif
             <li>
                 <a href="{{route('patients')}}"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
             </li>

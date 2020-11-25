@@ -84,18 +84,22 @@
     <li class="nav-item dropdown has-arrow">
         <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
             <span class="user-img">
-            <img class="rounded-circle" src="{{asset(Session::get('doctorAvatar'))}}" width="24" alt="Admin">
+            @if(Session::has('doctorId'))
+               <img class="rounded-circle" src="{{asset(Session::get('doctorAvatar'))}}" width="24" alt="Admin">
+            @elseif(Session::has('adminId'))
+                <img class="rounded-circle" src="{{asset('ui/admin/assets/img/user.jpg')}}" width="24" alt="Admin">
+            @endif
                 <span class="status online"></span>
             </span>
             @if (Session::has('doctorName'))
                 <span>
                 {{Session::get('doctorName')}}
-            </span>  
+            </span>
             @endif
             @if (Session::has('adminName'))
                 <span>
                 {{Session::get('adminName')}}
-            </span>  
+            </span>
             @endif
         </a>
         <div class="dropdown-menu">

@@ -17,7 +17,9 @@ class CreateSchedulesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('doctor_id')->index();
             $table->unsignedBigInteger('department_id')->index();
-            $table->string('available_date');
+            $table->string('available_days');
+            $table->integer('morning_shift')->nullable();
+            $table->integer('evening_shift')->nullable();
             $table->boolean('status');
             $table -> foreign ( 'doctor_id' )
                     -> references ( 'id' )-> on ( 'doctors' )

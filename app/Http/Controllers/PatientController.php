@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Patient;
+use Session;
 
 class PatientController extends Controller
 {
@@ -11,7 +12,7 @@ class PatientController extends Controller
         $validatedData = $req->validate([
            'name'=> 'required|max:50',
            'email'=> 'required|email|unique:patients,email',
-           'dob'=> 'required|min:1',
+           'dob'=> 'required|date',
            'address'=>'required|max:70',
         //    'phone'=> 'required|numeric|size:11',
            'phone'=> 'required|regex:/(01)[0-9]{9}/'
@@ -22,20 +23,13 @@ class PatientController extends Controller
         $obj->dob=$req->dob;
         $obj->address=$req->address;
         $obj->phone=$req->phone;
+        $obj->save();
 
-        if ($obj->save()) {
-            $notification=array(
-                'messege'=>'Successfully Patient Inserted',
-                'alert-type'=>'success'
-                 );
-               return Redirect('add-appointment')->with($notification);
-        }else{
-              $notification=array(
-                'messege'=>'Something went wrong!',
-                'alert-type'=>'error'
-                 );
-               return Redirect()->back()->with($notification);
-        }
+        $patient_id = $obj->id;
+        Session::put('patient_id',$patient_id);
+
+        return Redirect('add-appointment');
+
 
 
     }

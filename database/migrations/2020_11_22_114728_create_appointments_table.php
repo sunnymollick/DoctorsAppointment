@@ -16,10 +16,10 @@ class CreateAppointmentsTable extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('patient_id')->index();
-            $table->unsignedBigInteger('doctor_id')->index();
             $table->unsignedBigInteger('department_id')->index();
-            $table->unsignedBigInteger('schedule_id')->index();
-            $table->time('time')->nullable();
+            $table->unsignedBigInteger('doctor_id')->index();
+            $table->string('appointment_day');
+            $table->boolean('shift');
             $table->boolean('status');
             $table -> foreign ( 'patient_id' )
                     -> references ( 'id' )-> on ( 'patients' )
@@ -29,9 +29,6 @@ class CreateAppointmentsTable extends Migration
                     -> onDelete ( 'cascade' );
             $table -> foreign ( 'department_id' )
                     -> references ( 'id' )-> on ( 'departments' )
-                    -> onDelete ( 'cascade' );
-            $table -> foreign ( 'schedule_id' )
-                    -> references ( 'id' )-> on ( 'schedules' )
                     -> onDelete ( 'cascade' );
             $table->timestamps();
         });
