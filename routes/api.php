@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('find-doctor/{id}','AppointmentController@findDoctor');
+Route::get('get-available_days/{id}','AppointmentController@getAvailableDays');
+// Route::get('get-available-shift/{id}','AppointmentController@getAvailableShift');
+Route::get('get-available-shift/{id}','ScheduleController@getAvailableShift');

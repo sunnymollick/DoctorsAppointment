@@ -12,8 +12,9 @@ class AdminController extends Controller
 
 
     public function doctors(){
-        return view('admin.pages.doctor.doctors');
+        return view('admin.pages.doctors');
     }
+
     public function add_doctor(){
         return view('admin.pages.doctor.add-doctor');
     }
@@ -31,14 +32,6 @@ class AdminController extends Controller
         return view('admin.pages.appointments');
     }
 
-
-
-    public function schedule(){
-        return view('admin.pages.schedule');
-    }
-    public function add_schedule(){
-        return view('admin.pages.add-schedule');
-    }
 
 
 

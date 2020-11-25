@@ -10,6 +10,6 @@ class BlogController extends Controller{
     }
 
     public function adminBlog(){
-        return view('admin.pages.blog');
+        return view('admin.pages.blog.blog');
     }
 }

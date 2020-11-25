@@ -23,115 +23,100 @@
         <div class="page-wrapper">
             <div class="content">
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <h4 class="page-title">Add Appointment</h4>
+                    <div class="col-md-8 offset-md-2">
+                        <h4 class="page-title text-center">Add Appointment</h4>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Appointment ID</label>
-                                        <input class="form-control" type="text" value="APT-0001" readonly="">
-                                    </div>
+
+                        <form method="POST" action="{{ route('create-appointment') }}">
+                            @csrf
+
+                                <div class="col-md-8 offset-md-2">
+                                    <input type="hidden" name="patient_id" value="{{ $patient->id }}">
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Patient Name</label>
-                                        <select class="select">
-                                            <option>Select</option>
-                                            <option>Jennifer Robinson</option>
-                                            <option>Terry Baker</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
+
+                                <div class="col-md-8 offset-md-2">
                                     <div class="form-group">
                                         <label>Department</label>
-                                        <select class="select">
+                                        <select class="select" name="department_id" class="form-control" id="department">
                                             <option>Select</option>
-                                            <option>Dentists</option>
-                                            <option>Neurology</option>
-                                            <option>Opthalmology</option>
-                                            <option>Orthopedics</option>
-                                            <option>Cancer Department</option>
-                                            <option>ENT Department</option>
+                                            @foreach ($departments as $department)
+                                                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
+
+
+                                    <div class="form-group row">
+                                        <div class="col-md-8 offset-md-2">
                                         <label>Doctor</label>
-                                        <select class="select">
-                                            <option>Select</option>
-                                            <option>Cristina Groves</option>
-                                            <option>Marie Wells</option>
-                                            <option>Henry Daniels</option>
+                                        <select class="select" name="doctor_id" class="form-control" id="doctor">
+                                            <option value="">Select Doctor</option>                                        </select>
+                                    </div>
+                                </div>
+
+
+
+                                    <div class="form-group row">
+                                        <div class="col-md-8 offset-md-2">
+                                        <label>Appointment Days</label>
+                                        <select class="select" name="appointment_day" id="appoint_day">
+                                            <option value="">Select Day</option>
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Date</label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
+
+                            <div class="form-group row">
+                                <div class="col-md-8 offset-md-2">
+                                    <label for="">Select Shift</label>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div id="morning_shift" class="form-check">
+                                                <input class="form-check-input" name="shift" class="form-control" type="checkbox" value="1" id="defaultCheck1" >
+                                                <label class="form-check-label" for="defaultCheck1">
+                                                   Morning
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-check" id="evening_shift">
+                                              <input class="form-check-input" name="shift" class="form-control" type="checkbox" value="0" id="defaultCheck1">
+                                              <label class="form-check-label" for="defaultCheck1">
+                                                 Evening
+                                              </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Time</label>
-                                        <div class="time-icon">
-                                            <input type="text" class="form-control" id="datetimepicker3">
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Patient Email</label>
-                                        <input class="form-control" type="email">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Patient Phone Number</label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Message</label>
-                                <textarea cols="30" rows="4" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label class="display-block">Appointment Status</label>
+
+                            <div class="form-group row">
+                                <div class="col-md-8 offset-md-2">
+                                    <label class="display-block">Appointment Status</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="status" id="product_active" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="status" id="product_active" value="1" checked>
                                     <label class="form-check-label" for="product_active">
                                     Active
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="status" id="product_inactive" value="option2">
+                                    <input class="form-check-input" type="radio" name="status" id="product_inactive" value="0">
                                     <label class="form-check-label" for="product_inactive">
                                     Inactive
                                     </label>
                                 </div>
+                                </div>
+
                             </div>
-                            <div class="m-t-20 text-center">
-                                <button class="btn btn-primary submit-btn">Create Appointment</button>
+
+                            <div class="form-group row">
+                                <div class="col-md-8 offset-md-2">
+                                    <input type="submit" value="Create Appointment" class="btn btn-primary submit-btn" id="">
+                                </div>
                             </div>
+
                         </form>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -145,12 +130,78 @@
     <script src="{{asset('ui/admin')}}/assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="{{asset('ui/admin/assets/js/app.js')}}"></script>
     <script>
-            $(function () {
-                $('#datetimepicker3').datetimepicker({
-                    format: 'LT'
-
+            $(document).ready(function(){
+                $("#department").change(function(){
+                    var dept_val = $("#department").val();
+                    $.ajax({
+                    url: "/api/find-doctor/"+dept_val,
+                    dataType: 'json',
+                    success: function(data){
+                        $("#doctor").html('<option value="">Select</option>');
+                        var len_doc = data.doctors.length;
+                        for( i=0 ; i<len_doc ; i++){
+                            var str = '<option value="'+ data.doctors[i].id +'"> '+ data.doctors[i].name +' </option>';
+                            $("#doctor").append(str);
+                        }
+                    }
                 });
+
             });
+
+            $("#doctor").change(function(){
+                var doc_id = $("#doctor").val();
+                $.ajax({
+                url: "/api/get-available_days/"+doc_id,
+                dataType: 'json',
+                success: function(data){
+                    $("#appoint_day").html('<option value="">Select Day</option>');
+                    var len_days = data.schedules.length;
+                    console.log(data.schedules);
+                    for(i=0;i<len_days;i++){
+                        var str = '<option value="'+ data.schedules[i].id +'"> '+ data.schedules[i].available_days +' </option>';
+                            $("#appoint_day").append(str);
+
+                    }
+
+                }
+        });
+
+    });
+
+
+    $("#appoint_day").change(function(){
+        var sch_id = $("#appoint_day").val();
+        $.ajax({
+            url: "/api/get-available-shift/"+sch_id,
+            dataType: 'json',
+            success: function(data){
+                console.log(data);
+                var morning_appointment = data.get_morning_appointment;
+                var evening_appointment = data.get_evening_appointment;
+
+                if(morning_appointment !=0){
+                    $("#moring_shift").show();
+                }else {
+                    $("#morning_shift").hide();
+
+                }
+                if(evening_appointment !=0){
+                    $("#evening_shift").show();
+                }else{
+                    $("#evening_shift").hide();
+                }
+
+
+
+            }
+        });
+
+    });
+
+
+
+
+});
      </script>
 </body>
 

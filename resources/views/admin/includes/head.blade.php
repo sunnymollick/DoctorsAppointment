@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('ui/admin')}}/assets/css/tagsinput.css">
     <link rel="stylesheet" type="text/css" href="{{asset('ui/admin/assets/css/bootstrap-datetimepicker.min.css')}}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 
 
     <!--[if lt IE 9]>
