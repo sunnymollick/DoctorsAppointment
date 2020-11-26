@@ -80,6 +80,7 @@ class AppointmentController extends Controller
                                         ->select('appointments.*','doctors.name as doc_name','patients.name as patient_name','departments.name as dept')
                                         ->where('appointments.id','=',$appointment_id)
                                         ->first();
+        Session::flush();
 
         return view('website.pages.show_appointment',['appointments'=>$appointments]);
     }
