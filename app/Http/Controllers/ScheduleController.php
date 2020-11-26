@@ -70,4 +70,15 @@ class ScheduleController extends Controller
 	 	    ]);
 
         }
+
+        public function delteSchedule($id){
+            $schedule = Schedule::where('id','=',$id)->first();
+            $schedule->delete();
+            $notification=array(
+                'messege'=>'Successfully Schedule Delete',
+                'alert-type'=>'success'
+                 );
+               return Redirect()->back()->with($notification);
+
+        }
 }
