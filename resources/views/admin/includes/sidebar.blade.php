@@ -3,7 +3,7 @@
         <ul>
             <li class="menu-title">Main</li>
             <li class="active">
-                <a href="index-2.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                <a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
             </li>
             @if(Session::has('adminId'))
             <li>
@@ -15,6 +15,7 @@
              <a href="{{route('doctor-profile')}}"><i class="fa fa-user-md"></i> <span>My Profile</span></a>
             </li>
             @endif
+            @if(Session::has('adminId'))
             <li>
                 <a href="{{route('patients')}}"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
             </li>
@@ -27,6 +28,7 @@
             <li>
                 <a href="{{route('all-departments')}}"><i class="fa fa-hospital-o"></i> <span>Departments</span></a>
             </li>
+            @endif
             <li class="submenu">
                 <a href="#"><i class="fa fa-envelope"></i> <span> Email</span> <span class="menu-arrow"></span></a>
                 <ul style="display: none;">

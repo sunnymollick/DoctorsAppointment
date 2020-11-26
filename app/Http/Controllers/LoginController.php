@@ -15,6 +15,7 @@ class LoginController extends Controller
             'email'=>'required|email',
             'password' => 'required'
         ]);
+        
 
     	$email = $req->email;
         $password = $req->password;
@@ -29,7 +30,7 @@ class LoginController extends Controller
             Session::put('doctorGender',$user->gender);
             Session::put('doctorEmail',$user->email);
             Session::put('doctorAvatar',$user->image);
-            return redirect()->to('dashboard');
+            return redirect()->to('doctor/profile');
         }
         elseif($admin && ($password = $admin->password)){
             Session::put('adminId',$admin->id);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Department;
 use Illuminate\Http\Request;
 
@@ -31,6 +32,11 @@ class HomeController extends Controller{
     //     return view('website.pages.reg',['departments'=>$departments]);
     // }
     public function login(){
+        if(Session::has('adminId')||Session::has('doctorId')){
+            // Session::flush();
+            return redirect()->back();
+        }
+        else {return view('website.pages.login');}
         return view('website.pages.login');
     }
 

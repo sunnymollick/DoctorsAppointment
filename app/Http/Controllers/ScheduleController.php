@@ -17,9 +17,6 @@ class ScheduleController extends Controller
         return view('admin.pages.schedule',['schedules'=>$schedules]);
     }
 
-    public function add_schedule(){
-        return view('admin.pages.add-schedule');
-    }
 
     public function createSchedule(Request $request){
         $available_days = $request->available_days;

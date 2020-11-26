@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-    <a class="navbar-brand logo_h" href="index.html"><img src="{{ asset('ui/website/img/logo.png') }}" alt=""></a>
+    <a class="navbar-brand logo_h" href="{{ route('/') }}"><img src="{{ asset('ui/website/img/logo.png') }}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
@@ -16,6 +16,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('web-department') }}">Department</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('registration') }}">Registration</a></li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
