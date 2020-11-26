@@ -33,6 +33,7 @@ Route::group(['middleware' => 'checkloggedin'], function(){
 	// YOUR ROUTES HERE
     Route::get('dashboard','AdminController@dashboard')->name('dashboard');
     Route::get('patients','AdminController@patients')->name('patients');
+    Route::get('delete-patient/{id}','AdminController@deletePatient')->name('delete-patient');
     Route::get('appointments','AdminController@appointments')->name('appointments');
     
     // Schedule routes go here
@@ -49,6 +50,7 @@ Route::group(['middleware' => 'checkloggedin'], function(){
     // Doctors Routes goes here
     Route::get('doctors','AdminController@doctors')->name('doctors');
     Route::get('add-doctor','AdminController@add_doctor')->name('add-doctor');
+    Route::get('delete-doctor/{id}', 'AdminController@deleteDoctor')->name('delete-doctor');
     
 });
 

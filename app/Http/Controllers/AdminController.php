@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Doctor;
+use App\Department;
+use App\Patient;
 
 class AdminController extends Controller
 {
@@ -12,7 +15,8 @@ class AdminController extends Controller
 
 
     public function doctors(){
-        return view('admin.pages.doctors');
+        $doctors = Doctor::leftJoin('departments','doctors.department_id','departments.id')->select('doctors.*','departments.name as dept_name')->get();
+        return view('admin.pages.doctors', ['doctors'=>$doctors]);
     }
 
     public function add_doctor(){
@@ -21,10 +25,44 @@ class AdminController extends Controller
     public function edit_doctor(){
         return view('admin.pages.doctor.edit-doctor');
     }
+    public function deleteDoctor($id){
+        $obj = Doctor::find($id);
+        if ($obj->delete()) {
+            $notification=array(
+                'messege'=>'Successfully Doctor Deleted',
+                'alert-type'=>'success'
+                 );
+               return Redirect('doctors')->with($notification);
+        }else{
+              $notification=array(
+                'messege'=>'Something went wrong!',
+                'alert-type'=>'error'
+                 );
+               return Redirect()->back()->with($notification);
+        }
 
+    }
 
     public function patients(){
-        return view('admin.pages.patients');
+        $patients = Patient::all();
+        return view('admin.pages.patients', ['patients'=>$patients]);
+    }
+    public function deletePatient($id){
+        $obj = Patient::find($id);
+        if ($obj->delete()) {
+            $notification=array(
+                'messege'=>'Successfully Patient Deleted',
+                'alert-type'=>'success'
+                 );
+               return Redirect('patients')->with($notification);
+        }else{
+              $notification=array(
+                'messege'=>'Something went wrong!',
+                'alert-type'=>'error'
+                 );
+               return Redirect()->back()->with($notification);
+        }
+
     }
 
 

@@ -15,7 +15,7 @@ class PatientController extends Controller
            'dob'=> 'required|date',
            'address'=>'required|max:70',
         //    'phone'=> 'required|numeric|size:11',
-           'phone'=> 'required|regex:/(01)[0-9]{9}/'
+           // 'phone'=> 'required|regex:/(01)[0-9]{9}/'
         ]);
         $obj = new Patient();
         $obj->name=$req->name;
