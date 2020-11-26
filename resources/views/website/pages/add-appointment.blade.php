@@ -112,7 +112,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-8 offset-md-2">
-                                    <input type="submit" value="Create Appointment" class="btn btn-primary submit-btn" id="">
+                                    <input type="submit" value="Create Appointment" class="btn btn-primary submit-btn" id="submit_btn">
                                 </div>
                             </div>
 
@@ -189,6 +189,12 @@
                     $("#evening_shift").show();
                 }else{
                     $("#evening_shift").hide();
+                }
+
+                if(morning_appointment == 0 && evening_appointment == 0){
+                    $("#submit_btn").hide();
+                }else{
+                    $("#submit_btn").show();
                 }
 
 
