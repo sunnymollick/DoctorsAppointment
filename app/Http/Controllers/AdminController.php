@@ -14,6 +14,7 @@ class AdminController extends Controller
     public function doctors(){
         return view('admin.pages.doctors');
     }
+
     public function add_doctor(){
         return view('admin.pages.doctor.add-doctor');
     }
@@ -23,28 +24,18 @@ class AdminController extends Controller
 
 
     public function patients(){
-        return view('admin.pages.patient.patients');
+        return view('admin.pages.patients');
     }
 
 
     public function appointments(){
         return view('admin.pages.appointments');
     }
-    
-
-
-    public function schedule(){
-        return view('admin.pages.schedule');
-    }
-    public function add_schedule(){
-        return view('admin.pages.add-schedule');
-    }
 
 
 
-    public function blog(){
-        return view('admin.pages.blog');
-    }
+
+
     public function add_blog(){
         return view('admin.pages.add-blog');
     }

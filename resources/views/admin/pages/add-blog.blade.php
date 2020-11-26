@@ -89,8 +89,8 @@
                                 <textarea cols="30" rows="6" class="form-control"></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Tags <small>(separated with a comma)</small></label>
-                                <input type="text" placeholder="Enter your tags" data-role="tagsinput" class="form-control">
+                                <label>Author Name <small>(Enter Full Name)</small></label>
+                                <input type="text" data-role="tagsinput" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label class="display-block">Blog Status</label>
@@ -113,7 +113,7 @@
                         </form>
                     </div>
                 </div>
-    
+
 
 @endsection
 

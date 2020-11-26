@@ -5,30 +5,35 @@
                         <h4 class="page-title">Schedule</h4>
                     </div>
                     <div class="col-sm-8 col-9 text-right m-b-20">
-					 <a href="{{route('add-schedule')}}" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Schedule</a>
+					 {{-- <a href="{{route('add-schedule')}}" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Schedule</a> --}}
                     </div>
                 </div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="table-responsive">
-							<table class="table table-border table-striped custom-table mb-0">
+							<table id="myTable" class="table table-border table-striped custom-table mb-0">
 								<thead>
 									<tr>
 										<th>Doctor Name</th>
 										<th>Department</th>
 										<th>Available Days</th>
-										<th>Available Time</th>
 										<th>Status</th>
 										<th class="text-right">Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> Henry Daniels</td>
-										<td>Cardiology</td>
-										<td>Sunday, Monday, Tuesday</td>
-										<td>10:00 AM - 7:00 PM</td>
-										<td><span class="custom-badge status-green">Active</span></td>
+                                    @foreach ($schedules as $schedule)
+                                    <tr>
+                                    <td> {{ $schedule->doc_name }}</td>
+                                    <td>{{ $schedule->dept }}</td>
+                                    <td>{{ $schedule->available_days }}</td>
+									<td>
+                                        @if($schedule->status == 1)
+                                            <span class="custom-badge status-green">Active</span>
+                                        @else
+                                            <span class="custom-badge status-red">Inactive</span>
+                                        @endif
+                                    </td>
 										<td class="text-right">
 											<div class="dropdown dropdown-action">
 												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
@@ -39,6 +44,8 @@
 											</div>
 										</td>
 									</tr>
+                                    @endforeach
+
 								</tbody>
 							</table>
 						</div>
@@ -60,9 +67,13 @@
 @endsection
 
 @section('scripts')
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
     <script src="assets/js/select2.min.js"></script>
     <script src="assets/js/moment.min.js"></script>
     <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-    
+
 @endsection
-    
